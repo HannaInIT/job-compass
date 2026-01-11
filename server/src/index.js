@@ -13,7 +13,7 @@ if (port == null) {
 
 const startServer = async () => {
   try {
-    app.listen(port, () => {
+    app.listen(port, "0.0.0.0", () => {
       logInfo(`Server started on port ${port}`);
     });
   } catch (error) {

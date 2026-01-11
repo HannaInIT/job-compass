@@ -7,16 +7,16 @@ export default function About() {
   const contributors = [
     {
       name: "Yaroslav Kazeev",
-      role: "HYF trainee",
+      role: "Full Stack Developer",
       avatar: images.yaroslavAvatar,
       description:
-        "The main instigator and disruptor of the project. He realized that many job search sites produce results that are irrelevant to the applicant, and figured out how to make them customizable. Combined big-picture vision with the hands-on implementation of core features.",
+        "Initiated the project idea and identified key issues with relevance in existing job search platforms. Contributed to defining the core concept and implemented essential features related to job filtering and customization.",
       gitHub: "https://github.com/YaroslavKazeev",
       linkedin: "https://www.linkedin.com/in/yaroslavkazeev/",
     },
     {
       name: "Hanna Dubyna",
-      role: "HYF trainee",
+      role: "Full Stack Developer",
       avatar: images.hannaAvatar,
       description:
         "Led UI/UX design and brought key features to life — from route calculation and Firebase-powered avatar uploads to LinkedIn API integration, guest user experience, and database connection. Also built the About page and core navigation.",
@@ -26,42 +26,12 @@ export default function About() {
 
     {
       name: "Yahya Al-Ademi",
-      role: "HYF trainee",
+      role: "Full Stack Developer",
       avatar: images.yahyaAvatar,
       description:
-        "Designed and implemented the full authentication architecture for the application, covering secure backend workflows (user registration, login, hashing, token-based password reset, email delivery) and complete frontend integration using React Context, ensuring seamless communication between client and server.",
+        "Designed and implemented the full authentication architecture for the application, covering secure backend workflows (user registration, login, hashing, token-based password reset, email delivery) and complete frontend integration using React Context.",
       gitHub: "https://github.com/YahyaAl-Ademi",
       linkedin: "https://www.linkedin.com/in/yahya-al-ademi-12786555/",
-    },
-    {
-      name: "Stas Seldin",
-      role: "DevOps",
-      avatar: images.stasAvatar,
-      description:
-        "Our DevOps, Education Director and technical compass who provided invaluable guidance on everything from database configuration to deployment strategies during weekly Tech Hours, ensuring that the team could tackle any challenge with confidence.",
-      gitHub: "https://github.com/stasel",
-      linkedin: "https://www.linkedin.com/in/stasel/",
-    },
-
-    {
-      name: "Jana Gombitová",
-      role: "Product Owner",
-      avatar: images.janaAvatar,
-      description:
-        "Our Product Owner, Scrum Master and guiding light — translating user needs into clear features, providing invaluable design feedback, teaching us industry best practices, keeping the team aligned, and helping us build a product that truly serves its users.",
-      gitHub: "https://github.com/janagombitova",
-      linkedin:
-        "https://www.linkedin.com/in/jana-gombitova-42b08394?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-    },
-
-    {
-      name: "Tim Lorent",
-      role: "Tech lead",
-      avatar: images.timAvatar,
-      description:
-        "Our Tech Lead who guided us through technical sessions, helping us navigate challenges, distribute responsibilities, and establish effective development workflows — especially during the critical early stages of the project.",
-      gitHub: "https://github.com/tlorent",
-      linkedin: "https://www.linkedin.com/in/timlorent/",
     },
   ];
 
@@ -113,22 +83,16 @@ export default function About() {
         <div className="project-overview">
           <div className="overview-item">
             <div className="overview-text">
-              <h3>What We Do</h3>
-              <p>
-                We help you find ideal positions with advanced filtering
-                capabilities that go beyond traditional job boards. Our platform
-                offers a comprehensive search experience tailored to your needs.
+              <h3 className="overview-title">What the project does</h3>
+              <p className="overview-description">
+                Our platform helps users find jobs by allowing detailed searches
+                with filters such as location, experience level, and skills.
+                This makes it easier to match candidates with positions that
+                suit them.
               </p>
-            </div>
-          </div>
-
-          <div className="overview-item">
-            <div className="overview-text">
-              <h3>Our mission</h3>
-              <p>
-                Connect talented professionals with opportunities that match
-                their skills, preferences, and career goals.
-              </p>
+              <span className="overview-note">
+                Developed collaboratively by three developers.
+              </span>
             </div>
           </div>
         </div>
@@ -199,10 +163,10 @@ export default function About() {
           <p className="contact-text-secondary">
             Drop us a line at{" "}
             <a
-              href="mailto:jobcompass2025@gmail.com?subject=Question about JobCompass"
+              href="mailto:ann10062016@gmail.com?subject=Question about JobCompass"
               className="email-link"
             >
-              jobcompass2025@gmail.com
+              ann10062016@gmail.com
             </a>{" "}
             and we will get back to you as soon as possible!
           </p>

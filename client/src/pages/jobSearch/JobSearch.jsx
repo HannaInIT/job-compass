@@ -18,7 +18,7 @@ export default function JobSearch() {
       <div className="mission-section">
         <h1>
           Master navigating the sea of irrelevant jobs with{" "}
-          <span>JobCompass</span>
+          <span>Job Compass</span>
         </h1>
         <p className="subtitle">
           Tell us your skills, role, location, and we’ll steer you to the right
