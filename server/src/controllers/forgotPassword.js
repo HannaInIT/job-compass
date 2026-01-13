@@ -6,6 +6,7 @@ import { logError } from "../util/logging.js";
 // ansporter Gmail App Password
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST, // smtp.gmail.com
+  port: process.env.SMTP_PORT || 2525,
   secure: false,
   auth: {
     user: process.env.SMTP_USER,
