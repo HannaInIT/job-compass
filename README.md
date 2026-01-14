@@ -164,9 +164,6 @@ This project was developed as part of HackYourFuture's final project by:
 - **Yaroslav Kazeev** - HYF trainee - [GitHub](https://github.com/YaroslavKazeev) | [LinkedIn](https://www.linkedin.com/in/yaroslavkazeev/)
 - **Hanna Dubyna** - HYF trainee - [GitHub](https://github.com/HannaInIT) | [LinkedIn](https://www.linkedin.com/in/hanna-dubyna/)
 - **Yahya Al-Ademi** - HYF trainee - [GitHub](https://github.com/YahyaAl-Ademi) | [LinkedIn](https://www.linkedin.com/in/yahya-al-ademi-12786555/)
-- **Stas Seldin** - DevOps, Education Director - [GitHub](https://github.com/stasel) | [LinkedIn](https://www.linkedin.com/in/stasel/)
-- **Jana Gombitová** - Product Owner, Scrum Master - [GitHub](https://github.com/janagombitova) | [LinkedIn](https://www.linkedin.com/in/jana-gombitova-42b08394/)
-- **Tim Lorent** - Tech Lead - [GitHub](https://github.com/tlorent) | [LinkedIn](https://www.linkedin.com/in/timlorent/)
 
 ## 📧 Contact
 
