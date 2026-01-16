@@ -34,12 +34,6 @@ export async function forgotPassword(req, res) {
       return res.status(404).json({ success: false, msg: "Email not found" });
     }
 
-    // clean up an expired token for the current user
-    await connectedClient.query(
-      "UPDATE users SET reset_token = NULL, reset_token_expires = NULL WHERE email = $1 AND reset_token_expires < NOW()",
-      [email],
-    );
-
     const userId = result.rows[0].userid;
 
     const token = uuidv4();
