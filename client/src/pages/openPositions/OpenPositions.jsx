@@ -81,7 +81,7 @@ export default function OpenPositions() {
   const sortedJobs = useMemo(() => {
     if (selectedSort.length === 0) return jobsWithSkills;
     return [...jobsWithSkills].sort(createSortComparator(selectedSort));
-  }, [jobsWithSkills, selectedSort]);
+  }, [jobsWithSkills, selectedSort, isTravelLoading]);
 
   const filteredJobs = useMemo(() => {
     return filterJobs(sortedJobs, activeFilters);
@@ -173,7 +173,6 @@ export default function OpenPositions() {
                 <JobCard
                   key={job.id || idx}
                   job={job}
-                  isTravelLoading={isTravelLoading}
                   isInFavorites={favorites.some((fav) => fav.id === job.id)}
                   dispatch={dispatch}
                   toggleFavorite={toggleFavorite}

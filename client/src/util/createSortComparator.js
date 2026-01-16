@@ -50,6 +50,23 @@ export default function createSortComparator(selectedSort) {
     const key = selectedSort[i];
     const a = jobA[key];
     const b = jobB[key];
+
+    // Handle null/undefined values for numeric fields (travel_time, least_transfers, skillsMatch)
+    if (
+      key === "travel_time" ||
+      key === "least_transfers" ||
+      key === "skillsMatch"
+    ) {
+      // If both are null/undefined, they are equal
+      if (a == null && b == null) return 0;
+      // If only a is null/undefined, it comes last (higher sort value)
+      if (a == null) return 1;
+      // If only b is null/undefined, it comes last (higher sort value)
+      if (b == null) return -1;
+      // Both are numbers, compare normally (ascending order)
+      return a - b;
+    }
+
     if (typeof a === "number" && typeof b === "number") {
       return a - b;
     }
