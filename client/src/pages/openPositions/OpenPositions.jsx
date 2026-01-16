@@ -15,14 +15,8 @@ import createSortComparator from "../../util/createSortComparator";
 export default function OpenPositions() {
   const { user, dispatch, toggleFavorite } = UseUser();
 
-  const {
-    allJobs,
-    searchTerm,
-    isJobsLoading,
-    isTravelLoading,
-    error,
-    fetchBatchTravelDetails,
-  } = UseJobs();
+  const { allJobs, searchTerm, isJobsLoading, error, fetchBatchTravelDetails } =
+    UseJobs();
 
   const favorites = Array.isArray(user?.favorites) ? user.favorites : [];
   const skills = user?.skills || [];
@@ -173,7 +167,6 @@ export default function OpenPositions() {
                 <JobCard
                   key={job.id || idx}
                   job={job}
-                  isTravelLoading={isTravelLoading}
                   isInFavorites={favorites.some((fav) => fav.id === job.id)}
                   dispatch={dispatch}
                   toggleFavorite={toggleFavorite}

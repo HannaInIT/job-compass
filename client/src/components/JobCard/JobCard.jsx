@@ -27,7 +27,6 @@ function formatTravelTime(minutes) {
 export default function JobCard({
   job,
   onApplyClick,
-  isTravelLoading,
   user,
   toggleFavorite,
   isInFavorites,
@@ -173,18 +172,21 @@ export default function JobCard({
 
               {/* commute info block*/}
               <div className="job-commute-info">
-                {isTravelLoading && (
+                {job.travel_time === undefined ||
+                job.least_transfers === undefined ? (
                   <img src={gif.spinner} alt="Loading..." className="spinner" />
-                )}
-                {job.travel_time !== null && job.least_transfers !== null && (
-                  <>
-                    <Bus className="job-icon" />
-                    <span className="job-commute">
-                      {formatTravelTime(job.travel_time)}, {job.least_transfers}{" "}
-                      transfer
-                      {job.least_transfers !== 1 ? "s" : ""}
-                    </span>
-                  </>
+                ) : (
+                  job.travel_time !== null &&
+                  job.least_transfers !== null && (
+                    <>
+                      <Bus className="job-icon" />
+                      <span className="job-commute">
+                        {formatTravelTime(job.travel_time)},{" "}
+                        {job.least_transfers} transfer
+                        {job.least_transfers !== 1 ? "s" : ""}
+                      </span>
+                    </>
+                  )
                 )}
               </div>
             </div>
