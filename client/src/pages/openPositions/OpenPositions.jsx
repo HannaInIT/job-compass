@@ -15,14 +15,8 @@ import createSortComparator from "../../util/createSortComparator";
 export default function OpenPositions() {
   const { user, dispatch, toggleFavorite } = UseUser();
 
-  const {
-    allJobs,
-    searchTerm,
-    isJobsLoading,
-    isTravelLoading,
-    error,
-    fetchBatchTravelDetails,
-  } = UseJobs();
+  const { allJobs, searchTerm, isJobsLoading, error, fetchBatchTravelDetails } =
+    UseJobs();
 
   const favorites = Array.isArray(user?.favorites) ? user.favorites : [];
   const skills = user?.skills || [];
@@ -81,7 +75,7 @@ export default function OpenPositions() {
   const sortedJobs = useMemo(() => {
     if (selectedSort.length === 0) return jobsWithSkills;
     return [...jobsWithSkills].sort(createSortComparator(selectedSort));
-  }, [jobsWithSkills, selectedSort, isTravelLoading]);
+  }, [jobsWithSkills, selectedSort]);
 
   const filteredJobs = useMemo(() => {
     return filterJobs(sortedJobs, activeFilters);
