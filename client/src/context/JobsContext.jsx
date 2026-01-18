@@ -88,7 +88,10 @@ const JobsProvider = ({ children }) => {
     }
 
     try {
-      const res = await fetch("/api/travel/batch", {
+      const baseUrl = import.meta.env.PROD
+        ? import.meta.env.VITE_BACKEND_URL || ""
+        : "";
+      const res = await fetch(`${baseUrl}/api/travel/batch`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ homeAddress, workCities: citiesToFetch }),

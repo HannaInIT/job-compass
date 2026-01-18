@@ -8,7 +8,10 @@ export default function useTravelData() {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch("/api/travel/batch", {
+      const baseUrl = import.meta.env.PROD
+        ? import.meta.env.VITE_BACKEND_URL || ""
+        : "";
+      const response = await fetch(`${baseUrl}/api/travel/batch`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ homeAddress, workCities }),

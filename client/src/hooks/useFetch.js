@@ -55,9 +55,14 @@ const useFetch = (route, onReceived) => {
 
     const fetchData = async () => {
       // We add the /api subsection here to make it a single point of change if our configuration changes
+      // In development, use relative paths (proxied by Vite)
+      // In production, use the full backend URL
+      const baseUrl = import.meta.env.PROD
+        ? import.meta.env.VITE_BACKEND_URL || ""
+        : "";
 
       try {
-        const url = `/api${route}`;
+        const url = `${baseUrl}/api${route}`;
         const res = await fetch(url, { ...baseOptions, ...options, signal });
 
         const jsonResult = await res.json();
