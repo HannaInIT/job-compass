@@ -4,7 +4,15 @@
 
 ## 🚀 Live Demo
 
-### 🌐 Open JobCompass Application: [https://job-compass-app.netlify.app/](https://job-compass-app.netlify.app/)
+### 🌐 Open JobCompass Application:
+
+#### [https://job-compass-app.netlify.app/](https://job-compass-app.netlify.app/)
+
+### 🎬 Watch Feature Demo Video:
+
+#### [https://youtu.be/\_vUUhaZj-7I](https://youtu.be/_vUUhaZj-7I)
+
+See JobCompass in action! This video walkthrough demonstrates all key features, from guest mode to personalized job matching.
 
 ## 🎯 Problem & Solution
 
