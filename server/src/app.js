@@ -6,6 +6,9 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 
+// Trust proxy for Render deployment - more secure than just 'true'
+app.set("trust proxy", 1); // Trust only the first proxy (Render's load balancer)
+
 // CORS settings
 app.use((req, res, next) => {
   const allowedOrigins = [
