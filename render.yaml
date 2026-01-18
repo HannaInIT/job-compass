@@ -1,0 +1,54 @@
+services:
+  - type: web
+    name: backend-api
+    runtime: node
+    plan: standard
+    region: frankfurt
+    branch: develop
+    rootDir: server
+
+    buildCommand: npm ci
+    startCommand: npm run start
+
+    envVars:
+      - key: NODE_VERSION
+        value: 24
+
+      - key: PORT
+        value: 3000
+
+      - key: DATABASE_URL
+        sync: false
+
+      - key: X_RAPIDAPI_KEY
+        sync: false
+
+      - key: JWT_EXPIRES_IN
+        sync: false
+
+      - key: JWT_SECRET
+        generateValue: true
+
+      - key: GOOGLE_MAPS_API_KEY
+        sync: false
+
+      - key: VITE_FRONTEND_URL
+        sync: false
+
+      - key: SMTP_HOST
+        sync: false
+
+      - key: SMTP_PORT
+        sync: false
+
+      - key: SMTP_USER
+        sync: false
+
+      - key: SMTP_PASS
+        sync: false
+
+      - key: STORAGE_BUCKET
+        sync: false
+
+      - key: GOOGLE_APPLICATION_CREDENTIALS
+        sync: false
