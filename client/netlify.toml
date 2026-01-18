@@ -9,6 +9,11 @@
   command = "npm run build"
 
 [[redirects]]
+  from = "/api/*"
+  to = "https://job-compass-o40i.onrender.com/api/:splat"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

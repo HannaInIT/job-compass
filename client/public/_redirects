@@ -1,1 +1,4 @@
-/*    /index.html   200
+# Don't redirect API calls - let them fail naturally and be handled by the app
+/api/*  https://job-compass-o40i.onrender.com/api/:splat  200
+# Redirect all other requests to index.html for client-side routing
+/*      /index.html   200
