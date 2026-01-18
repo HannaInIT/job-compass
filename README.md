@@ -2,23 +2,70 @@
 
 > Master navigating the sea of irrelevant jobs with **JobCompass**
 
-JobCompass is an advanced job search platform that helps you find ideal positions with smart filtering capabilities, commute calculations, and personalized matching. Tell us your skills, role, and location, and we'll steer you to the right job with the least commute time.
+## 🚀 Live Demo
 
-The repo is a monorepo with a Vite/React Frontend and an Express/PostgreSQL Backend that also integrates Google Maps for transit times, RapidAPI (LinkedIn jobs), Firebase Storage for avatars, and email-based password recovery.
+### 🌐 Open JobCompass Application: [https://job-compass-app.netlify.app/](https://job-compass-app.netlify.app/)
 
-## 🎯 Mission
+## 🎯 Problem & Solution
 
-Connect talented professionals with opportunities that match their skills, preferences, and career goals.
+### The Problem
 
-## ✨ Features
+While there are numerous job search platforms available, even the most popular ones like LinkedIn have significant limitations:
 
-- **🔍 Smart Filtering and Sorting** - Filter by job type, work mode, and experience level, and sort listings based on what matters most to you
-- **⚡ Smart Matching** - Search and browse open roles; surface skills detected in each description.
-- **🗺️ Commute Calculator** - See travel time and number of transfers from your home to workplace
-- **❤️ Save to Favorites** - Mark interesting job posts to easily view them later
-- **✉️ Password Reset** - Recover account access via email with secure, short-lived tokens
-- **👤 User Profiles** - Customize your profile with skills, address settings, and avatar uploads
-- **👥 Guest Mode** - Try the platform without creating an account (with limited features)
+- **Promoted jobs clutter** - Too many sponsored listings obscure relevant positions
+- **No skill matching metrics** - Unclear whether a job matches your specific skills
+- **Limited sorting options** - Can't sort by commute distance, skill relevance, or transfer convenience
+- **Poor location intelligence** - No built-in commute calculations or transfer information
+- **Generic experience** - One-size-fits-all approach without personalization
+
+### Our Solution
+
+JobCompass addresses these pain points by providing:
+
+- **Smart skill matching** - See exactly which of your skills match each job posting
+- **Intelligent sorting** - Sort by skill matches, commute time, transfer count, or posting date
+- **Commute intelligence** - Real-time travel calculations with Google Maps integration
+- **Guest mode** - Try the platform without signup barriers
+- **Personalized experience** - Tailored job recommendations based on your profile
+
+## 👥 Who This Is For
+
+- **Job seekers** who want more intelligent job matching
+- **Professionals** looking to optimize their commute
+- **Career changers** who need clear skill gap analysis
+- **Busy professionals** who want pre-filtered, relevant opportunities
+
+## 📊 Success Metrics
+
+- **Relevance score** - Higher percentage of skill-matched positions
+- **Time saved** - Reduced time from search to application
+- **Commute optimization** - Better work-life balance through location intelligence
+- **User engagement** - Increased time spent on relevant job listings
+
+## ✨ Key Features
+
+### For Guest Users
+
+- **🔍 Job Search** - Search and browse open positions without account
+- **⚡ Smart Matching** - See skill matches with default profile
+- **🗺️ Commute Preview** - Basic travel time calculations
+- **📱 Try Before Signup** - Full preview mode to test functionality
+
+### For Registered Users
+
+- **👤 Personal Profile** - Custom skills, address, and avatar
+- **❤️ Save Favorites** - Bookmark jobs for later review
+- **🎯 Personalized Results** - Job matching based on your actual skills
+- **🚀 Direct Application** - Apply to jobs through original postings
+- **🔐 Account Management** - Password reset via email, profile deletion
+
+### Smart Features
+
+- **📈 Skill Matching** - Visual indicators showing skill alignment
+- **🚃 Commute Calculator** - Travel time and transfer count for each job
+- **🔄 Intelligent Sorting** - Multiple sorting options (skills, commute, date)
+- **🎛️ Advanced Filters** - Job type, work mode, experience level
+- **📧 Email Recovery** - Secure password reset functionality
 
 ## 🛠️ Tech Stack
 
@@ -28,6 +75,7 @@ Connect talented professionals with opportunities that match their skills, prefe
 - **Vite** - Build tool and dev server
 - **React Router DOM** - Client-side routing
 - **Lucide React** - Icon library
+- **Deployed on Netlify** - https://job-compass-app.netlify.app/
 
 ### Backend
 
@@ -40,6 +88,14 @@ Connect talented professionals with opportunities that match their skills, prefe
 - **Nodemailer** - Email service
 - **Multer** - File upload handling
 - **Google Maps API** - Commute calculations
+- **Deployed on Render** - https://job-compass-o40i.onrender.com
+
+### Current Configuration
+
+- **Job Search**: Currently using local job dataset for demonstration (real LinkedIn API integration available but requires paid API keys)
+- **Database**: PostgreSQL hosted on Neon
+- **File Storage**: Firebase for avatar uploads
+- **Email Service**: SMTP for password reset functionality
 
 ### DevOps & Tools
 
@@ -51,7 +107,7 @@ Connect talented professionals with opportunities that match their skills, prefe
 ## 📁 Project Structure
 
 ```
-c53-final-project-group-A/
+job-compass/
 ├── client/                 # React frontend application
 │   ├── src/
 │   │   ├── components/    # Reusable React components
@@ -77,17 +133,6 @@ c53-final-project-group-A/
 └── package.json           # Root package.json with workspace scripts
 ```
 
-## Backend Routes Overview
-
-- `POST /api/users` – sign up; `POST /api/users/login` / `/logout` – auth via HTTP-only cookie.
-- `GET /api/users/me` – current user; `PUT /api/users/profile` – update profile fields.
-- `POST /api/users/update-avatar` – upload avatar (Multer memory storage → Firebase Storage).
-- `POST /api/users/change-password` / `/change-skills` – profile mutations.
-- `POST /api/users/favorites/toggle` – save/unsave a job; `DELETE /api/users/delete/:userid` – delete account.
-- `POST /api/users/forgot-password` / `/reset-password` – email reset flow.
-- `POST /api/jobs/search` – search jobs (RapidAPI LinkedIn + local processing).
-- `POST /api/travel/batch` – batch transit time + transfer counts for job locations.
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -105,8 +150,8 @@ c53-final-project-group-A/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/HackYourFuture/c53-final-project-group-A.git
-   cd c53-final-project-group-A
+   git clone https://github.com/HannaInIT/job-compass.git
+   cd job-compass
    ```
 
 2. **Install dependencies**
@@ -128,7 +173,6 @@ c53-final-project-group-A/
    ```
 
    This will start both the client (Vite dev server) and server (Express with nodemon) concurrently.
-
    - Frontend: http://localhost:5173 (or the port Vite assigns)
    - Backend: http://localhost:3000 (or your configured PORT)
 
@@ -141,35 +185,52 @@ c53-final-project-group-A/
 
 ## 🚢 Deployment
 
-The project is configured for Heroku deployment. The `Procfile` specifies the production start command.
+The project is deployed using modern cloud platforms:
 
-### Heroku Deployment Steps
+- **Frontend**: Netlify - Automatic deployment from GitHub
+- **Backend**: Render - Containerized Node.js application
+- **Database**: Neon PostgreSQL - Serverless database
+- **Storage**: Firebase - File and avatar storage
 
-1. Create a Heroku app
-2. Set environment variables in Heroku dashboard
-3. Push to Heroku:
-   ```bash
-   git push heroku main
-   ```
+### Architecture
 
-The `heroku-postbuild` script will automatically:
+```
+Frontend (Netlify) ↔ Backend (Render) ↔ Database (Neon)
+                                     ↔ Storage (Firebase)
+                                     ↔ Google Maps API
+```
 
-- Install dependencies
-- Build the client application
+## 🏃‍♂️ Quick Start
 
-## 👥 Contributors
+### Try the Live Application
 
-This project was developed as part of HackYourFuture's final project by:
+Visit [https://job-compass-app.netlify.app/](https://job-compass-app.netlify.app/) to experience JobCompass immediately.
 
-- **Yaroslav Kazeev** - HYF trainee - [GitHub](https://github.com/YaroslavKazeev) | [LinkedIn](https://www.linkedin.com/in/yaroslavkazeev/)
-- **Hanna Dubyna** - HYF trainee - [GitHub](https://github.com/HannaInIT) | [LinkedIn](https://www.linkedin.com/in/hanna-dubyna/)
-- **Yahya Al-Ademi** - HYF trainee - [GitHub](https://github.com/YahyaAl-Ademi) | [LinkedIn](https://www.linkedin.com/in/yahya-al-ademi-12786555/)
+**Guest Mode Demo:**
 
-## 📧 Contact
+1. Search for "Frontend developer" or any tech role
+2. Explore skill matching and commute calculations
+3. Try sorting and filtering options
+4. Experience the seamless user interface
 
-Have questions or feedback? We would love to hear from you!
+**Full Experience:**
 
-Drop us a line at [jobcompass2025@gmail.com](mailto:jobcompass2025@gmail.com?subject=Question about JobCompass) and we will get back to you as soon as possible!
+1. Create an account or login
+2. Customize your profile (skills, address, avatar)
+3. Save jobs to favorites
+4. Get personalized job recommendations
+
+## 📖 Project Origin
+
+This project was originally created as a group project by three developers:
+
+- **Yaroslav Kazeev** - [GitHub](https://github.com/YaroslavKazeev) | [LinkedIn](https://www.linkedin.com/in/yaroslavkazeev/)
+- **Hanna Dubyna** - [GitHub](https://github.com/HannaInIT) | [LinkedIn](https://www.linkedin.com/in/hanna-dubyna/)
+- **Yahya Al-Ademi** - [GitHub](https://github.com/YahyaAl-Ademi) | [LinkedIn](https://www.linkedin.com/in/yahya-al-ademi-12786555/)
+
+## 🔄 Current Development
+
+The project is currently maintained and further developed by **Hanna Dubyna** as an individual portfolio piece, featuring enhanced functionality and deployment optimizations.
 
 ## 📄 License
 
@@ -177,5 +238,7 @@ ISC
 
 ## 🙏 Acknowledgments
 
-- Built as part of [HackYourFuture](https://www.hackyourfuture.net/) curriculum
-- Special thanks to all mentors and contributors who made this project possible
+- Originally developed as part of [HackYourFuture](https://www.hackyourfuture.net/) curriculum
+- Enhanced and maintained as an individual portfolio project
+- Special thanks to the original team members and HYF mentors
+- Thanks to all the APIs and services that make this platform possible
